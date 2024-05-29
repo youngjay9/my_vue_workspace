@@ -1,30 +1,81 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
 
 <template>
   <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+    <h1>Messages</h1>
+    <MessageItem
+      v-for="message in messages"
+      :key="message.id"
+      :sender="message.sender"
+      :msg="message.msg"
+      :time="message.time"
+    />
   </div>
-  <HelloWorld msg="Vite + Vue" />
+ 
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+<script>
+  import MessageItem from './components/MessageItem.vue';
+
+  export default {
+    name: 'App',
+    components: {
+      MessageItem,
+    },
+     
+    data() {
+      return {
+        messages:[
+        {
+          id: 1,
+          sender: "Jay",
+          msg: "你好呀!",
+          time: "19:38",
+        },
+        {
+          id: 2,
+          sender: "Thuy",
+          msg: "Hi!",
+          time: "19:40",
+        },
+        {
+          id: 3,
+          sender: "Ping",
+          msg: "最近怎么样？",
+          time: "19:42",
+        },
+        ],
+      }
+    },
+  }
+</script>
+<style>
+  * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, "PingFang SC", "Microsoft Yahei", sans-serif;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+body {
+  background-color: #0f141c;
+  opacity: 1;
+  background-image: radial-gradient(
+    #212943 0.6000000000000001px,
+    #0f141c 0.6000000000000001px
+  );
+  background-size: 12px 12px;
+  color: white;
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+#app {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+h1 {
+  margin-bottom: 2em;
 }
 </style>
