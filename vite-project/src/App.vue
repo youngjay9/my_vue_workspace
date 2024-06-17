@@ -1,52 +1,28 @@
 
 <template>
-  <div>
-    <h1>Messages</h1>
-    <MessageItem
-      v-for="message in messages"
-      :key="message.id"
-      :sender="message.sender"
-      :msg="message.msg"
-      :time="message.time"
-    />
-  </div>
- 
+  <nav>
+    <router-link to="/">页面1</router-link>
+    <router-link to="/2">页面2</router-link>
+    <router-link to="/3">页面3</router-link>
+  </nav>
+  <h2>下方是 router view</h2>
+  <router-view></router-view>
 </template>
 
 <script>
-  import MessageItem from './components/MessageItem.vue';
+  
+  
 
   export default {
     name: 'App',
+    
     components: {
-      MessageItem,
-    },
      
-    data() {
-      return {
-        messages:[
-        {
-          id: 1,
-          sender: "Jay",
-          msg: "你好呀!",
-          time: "19:38",
-        },
-        {
-          id: 2,
-          sender: "Thuy",
-          msg: "Hi!",
-          time: "19:40",
-        },
-        {
-          id: 3,
-          sender: "Ping",
-          msg: "最近怎么样？",
-          time: "19:42",
-        },
-        ],
-      }
     },
-  }
+
+    
+     
+  };
 </script>
 <style>
   * {
@@ -75,7 +51,26 @@ body {
   place-items: center;
 }
 
-h1 {
-  margin-bottom: 2em;
+input,
+select {
+  padding: 8px 14px;
+  border: 1px solid hsl(280deg, 50%, 50%);
+  border-radius: 4px;
+  outline: none;
+  background: hsl(280deg, 50%, 30%, 0.2);
+  color: white;
+}
+
+button {
+  border: none;
+  background: linear-gradient(
+    90deg,
+    hsl(240deg, 50%, 50%),
+    hsl(280deg, 50%, 50%)
+  );
+  padding: 1em 2em;
+  margin-top: 24px;
+  border-radius: 4px;
+  color: white;
 }
 </style>
