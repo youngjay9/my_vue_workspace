@@ -3,6 +3,7 @@
   <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/loadData">加載數據</router-link> |
+    <router-link to="/blog">Blog</router-link> |
     <router-link to="/about">About</router-link> |
   </nav>
   <h2>下方是 router view</h2>
