@@ -1,13 +1,23 @@
-import PageOne from "./components/PageOne.vue";
-import PageTwo from "./components/PageTwo.vue";
-import PageThree from "./components/PageThree.vue";
+import HomePage from "./pages/HomePage.vue";
+import AboutMe from "./pages/AboutMe.vue";
+import AsyncLoadData from "./pages/loadData/AsyncLoadData.vue";
 
 import { createRouter, createWebHistory } from "vue-router";
 
+
 const routes = [
-    {   path: "/", component: PageOne },
-    {   path:"/2", component: PageTwo },
-    {   path:"/3", component: PageThree }, 
+     {
+        path: "/",
+        component: HomePage,
+     },
+     {
+        path: "/about",
+        component: AboutMe,
+     },
+     {
+      path:"/loadData",
+      component: AsyncLoadData  
+     }
 ];
 
 const router = createRouter({   history: createWebHistory(),   routes });

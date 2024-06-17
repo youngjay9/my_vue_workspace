@@ -1,9 +1,9 @@
 
 <template>
   <nav>
-    <router-link to="/">页面1</router-link>
-    <router-link to="/2">页面2</router-link>
-    <router-link to="/3">页面3</router-link>
+    <router-link to="/">Home</router-link> |
+    <router-link to="/loadData">加載數據</router-link> |
+    <router-link to="/about">About</router-link> |
   </nav>
   <h2>下方是 router view</h2>
   <router-view></router-view>
@@ -11,17 +11,12 @@
 
 <script>
   
-  
-
   export default {
     name: 'App',
     
     components: {
      
-    },
-
-    
-     
+    },   
   };
 </script>
 <style>
