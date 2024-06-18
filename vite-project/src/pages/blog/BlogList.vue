@@ -3,9 +3,9 @@
       <div className="blogPosts">
         <article v-for="blogPost in blogPosts" :key="blogPost.id">
           <h2>
-            <router-link :to="`/blog/${blogPost.id}`">{{
-              blogPost.title
-            }}</router-link>
+            <router-link :to="`/blog/${blogPost.id}`">
+              {{ blogPost.title}}
+            </router-link>
           </h2>
           <p>{{ blogPost.body.substring(0, 100) + "..." }}</p>
         </article>

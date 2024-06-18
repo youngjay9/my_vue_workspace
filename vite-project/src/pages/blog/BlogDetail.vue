@@ -20,9 +20,11 @@
     },
     
     watch: {
-      // 因為 $route.params 會隨著 router-link 切換, 需用 watch 監控 postId 參數, 去動態重新撈資料   
+      // 因為 $route.params 會隨著 router-link 切換, 需用 watch 監控 $route.params參數, 
+      // 動態重新撈資料   
       "$route.params": {
         handler(params, oldParams) {
+          // 根據 params.postId 取得對應的 blogPost
           this.blogPost = getBlogPostById(params.postId);
         },
         immediate: true,
