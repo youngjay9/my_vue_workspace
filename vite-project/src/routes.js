@@ -7,6 +7,10 @@ import BlogList from "./pages/blog/BlogList.vue";
 import BlogDetail from "./pages/blog/BlogDetail.vue";
 
 import { createRouter, createWebHistory } from "vue-router";
+import BlogManagement from "./pages/blogmgmt/BlogManagement.vue";
+import AddBlog from "./pages/blogmgmt/AddBlog.vue";
+import RightSideBar from "./pages/blogmgmt/RightSidebar.vue";
+import BlogDetails from "./pages/blogmgmt/BlogDetails.vue";
 
 
 const routes = [
@@ -33,6 +37,27 @@ const routes = [
      {
       path: "/blog/:postId",
       component: BlogDetail,
+    },
+    {
+      path: "/blogmgmt",
+      component: BlogManagement,
+    },
+    {
+      path: "/blogs",
+      component: BlogManagement,
+      children: [
+        {
+         path: "new",
+         components: {
+            default: AddBlog,
+            rightSideBar: RightSideBar,
+         }
+        },
+        {
+         path:"details",
+         component: BlogDetails
+        },
+      ],
     },
 ];
 
